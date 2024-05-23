@@ -19,22 +19,35 @@
 Користувач ввів: 37568 - на екран відображається: 86573
 """
 
-delimeter = 10
+delimiter = 10
+exp = 4
 user_input = int(input("введіть п'ятизначне число: "))
 
-quotient, remainder = divmod(user_input, delimeter)
-result = str(remainder)
+digit1 = user_input % delimiter
+digit1 *= delimiter ** exp
+exp -= 1
+user_input //= delimiter
 
-quotient, remainder = divmod(quotient, delimeter)
-result += str(remainder)
+digit2 = user_input % delimiter
+digit2 *= delimiter ** exp
+exp -= 1
+user_input //= delimiter
 
-quotient, remainder = divmod(quotient, delimeter)
-result += str(remainder)
+digit3 = user_input % delimiter
+digit3 *= delimiter ** exp
+exp -= 1
+user_input //= delimiter
 
-quotient, remainder = divmod(quotient, delimeter)
-result += str(remainder)
+digit4 = user_input % delimiter
+digit4 *= delimiter ** exp
+exp -= 1
+user_input //= delimiter
 
-quotient, remainder = divmod(quotient, delimeter)
-result += str(remainder)
+digit5 = user_input % delimiter
+
+result = digit1 + digit2 + digit3 + digit4 + digit5
 
 print(result)
+
+
+
