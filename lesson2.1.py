@@ -25,11 +25,13 @@ user_input = int(input("введіть п'ятизначне число: "))
 
 digit1 = user_input % delimiter
 digit1 *= delimiter ** exp
+# digit1 = digit1 * 10000
 exp -= 1
 user_input //= delimiter
 
 digit2 = user_input % delimiter
 digit2 *= delimiter ** exp
+# digit2 = digit2 * 1000
 exp -= 1
 user_input //= delimiter
 

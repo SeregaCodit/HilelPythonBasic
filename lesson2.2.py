@@ -40,3 +40,5 @@ delimiter /= 10
 
 quotient, remainder = divmod(remainder, delimiter)
 print(int(quotient))
+
+
