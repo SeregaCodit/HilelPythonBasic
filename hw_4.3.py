@@ -6,7 +6,8 @@
 import random
 
 
-random_list = [random.randint(0,9) for i in range(3, 10)]
+random_list = [random.randint(0,9) for i in range(random.randint(3, 11))]
+print(len(random_list))
 print(random_list, end=" == ")
 
 second_from_the_end = len(random_list) - 2
