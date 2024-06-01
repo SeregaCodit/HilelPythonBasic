@@ -7,15 +7,14 @@
 """
 import random
 
-list_length = 10
-last_index_in_list = list_length - 1
+max_list_length = 10
 
 # створюємо не пустий список
-lst = [random.randint(0, i) for i in range(random.randint(1, list_length))]
-
+lst = [random.randint(0, 50) for i in range(random.randint(1, max_list_length))]
+last_index_in_list = len(lst) - 1
 # забезпечуємо, що у списку будуть нулі
 if 0 not in lst:
-    iterations = random.randint(1, int(list_length / random.randint(1, last_index_in_list)))
+    iterations = random.randint(1, int(len(lst) / random.randint(1, last_index_in_list)))
     for i in range(iterations):
         index = random.randint(0, last_index_in_list)
         if lst[index]:
