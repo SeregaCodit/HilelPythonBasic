@@ -15,8 +15,9 @@ while True:
         break
 
     # вважаємо, що користувач завжди вводить число
-    lst_length = int(user_input) + 1
+    lst_length = int(user_input)
     lst = [random.randint(-100 , 100) for i in range(lst_length)]
+    print(len(lst))
     print(lst, end=" => ")
 
     if lst:
