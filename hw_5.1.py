@@ -23,7 +23,7 @@ excepted_symbol_is_in_variable_name = False
 start_with_digit = False
 excepted_words = keyword.kwlist
 excepted_symbols = " " + string.punctuation.replace("_", "")
-digits = "1234567890"
+digits = string.digits
 variable_name = input("enter a variable name: ")
 
 for i in excepted_words:
