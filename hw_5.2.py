@@ -24,7 +24,7 @@ while True:
         result = first_number / second_number
 
     print(f"result = {result}")
-    ask_user_to_continue = input("let`s do it one more time? (\"yes\", \"y\" \ any other input to exit): " )
+    ask_user_to_continue = input("let`s do it one more time? (\"yes\", \"y\" \ any other input to exit): " ).lower()
     if ask_user_to_continue != "yes" and ask_user_to_continue != "y":
         print("End.")
         break
