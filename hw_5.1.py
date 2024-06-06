@@ -45,7 +45,4 @@ conditions = [variable_name, not excepted_symbol_is_in_variable_name, variable_n
               not start_with_digit, not (variable_name.count("_") == len(variable_name) and len(variable_name) > 1),
               not  variable_name_is_reserved]
 result = all(conditions)
-
-
-
 print(result)
