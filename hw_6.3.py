@@ -17,33 +17,31 @@ Copy code
 """
 import random
 
-random_method = False
 accessible_inputs = ["1", "2"]
 
 user_input = input("type a number: ")
 result = f"{user_input} -> "
-method = input("[choose calculation method]: 1 for evaluate, 2 for 'no pain - no gain' method: ")
+method = input("[choose calculation method]: 1 for simple and potentially dangerous method, 2 for 'no pain - no gain' method: ")
 
-while method not in accessible_inputs:
-    if random_method:
-        method = random.choice(accessible_inputs)
+if method not in accessible_inputs:
+    method = random.choice(accessible_inputs)
+    result = "\nif you don't care about letters, then I don't care about letters either\n" + result
 
-    if method == "1":
-        while int(user_input) > 9:
-            operation = "*".join(list(str(user_input)))
-            user_input = eval(operation)
-        result += str(user_input)
-    elif method == "2":
+
+if method == "1":
+    while int(user_input) > 9:
+        operation = "*".join(list(str(user_input)))
+        user_input = eval(operation)
+    result += str(user_input)
+elif method == "2":
+    while len(user_input) != 1:
         value = 1
-        while len(user_input) != 1:
-            for i in list(user_input):
-                value *= int(i)
-            user_input = str(value)
-            value = 1
-        result += str(user_input)
-    else:
-        result = "\nif you don't care about letters, then I don't care about letters either\n" + result
-        random_method = True
-
+        for i in list(user_input):
+            value *= int(i)
+        user_input = str(value)
+    result += str(user_input)
+else:
+    #я вкурсі що цього можна було і не писати =)
+    result = "Ми не знаємо як так вийшло... Аби ми тількі знали як такв вийшло... Але ми не знаємо як так вийшло... (с)"
 
 print(result)
