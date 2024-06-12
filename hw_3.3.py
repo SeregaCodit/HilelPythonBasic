@@ -12,7 +12,7 @@
 користувача не потрібно.
 """
 
-some_list = [1, 2, 3, 4, 5]
+some_list = []
 some_list_length = len(some_list)
 
 if not some_list_length:

@@ -6,22 +6,23 @@
 Порядок ненульових чисел має зберегтися!
 """
 import random
+list_length = 10
+# створюємо список
+lst = [random.randint(0, i) for i in range(random.randint(1, list_length))]
 
-max_list_length = 10
-
-# створюємо не пустий список
-lst = [random.randint(0, 10) for i in range(random.randint(1, max_list_length))]
-last_index_in_list = len(lst) - 1
-
-# забезпечуємо, що у списку будуть нулі
+# забезпечуємо, що у списку прнайнє один елемент дорівнює нулю
 if 0 not in lst:
-    index = random.randint(0, last_index_in_list)
-    lst[index] = 0
+    iterations = random.randint(1, int(list_length / random.randint(1, list_length - 1)))
+    for i in range(iterations):
+        index = random.randint(0, list_length - 1)
+        if lst[index]:
+            lst[index] = 0
 
-print("original list", lst, sep=": ", end=" => ")
+print(f"original list", lst, sep=": ", end=" => ")
 
-count_of_zeros = lst.count(0)
-lst = [i for i in lst if i]
-lst += [0] * count_of_zeros
+for i in lst:
+    if i == 0:
+        tmp = lst.pop(lst.index(i))
+        lst.append(tmp)
 
 print("result list", lst, sep=": ")
