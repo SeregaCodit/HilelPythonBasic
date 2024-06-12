@@ -17,10 +17,10 @@ def convert_to_capitalize(text: str) -> str:
     return ". ".join(sentences_list)
 
 
-def add_period(text: str) -> str:
-    if text.endswith("."):
+def add_last_symbol(text: str, symbol: str = ".") -> str:
+    if text.endswith(symbol):
         return text
-    return f"{text}."
+    return f"{text}{symbol}"
 
 
 def correct_sentence(text: str) -> str:
@@ -31,7 +31,7 @@ def correct_sentence(text: str) -> str:
         return text
 
     text = convert_to_capitalize(text)
-    text = add_period(text)
+    text = add_last_symbol(text)
     return text
 
 
