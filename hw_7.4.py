@@ -15,7 +15,7 @@ def create_set(multiplicity: int, length: int = 100) -> set:
     return set(result)
 
 
-def common_elements():
+def common_elements() -> set:
     set1 = create_set(multiplicity=3)
     set2 = create_set(multiplicity=5)
     return set1.intersection(set2)
