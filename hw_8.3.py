@@ -3,11 +3,14 @@
  повертати його. Унікальне число - це число, яке зустрічається в списку один раз. Випадок, коли в одному списку буде
   кілька унікальних чисел, перевіряти не потрібно.
 """
+from collections import Counter
 
 
 def find_unique_value(some_list):
-    val = [i for i in some_list if some_list.count(i) == 1]
-    return val[0]
+    counted_items = Counter(some_list)
+    for key, val in counted_items.items():
+        if key == 1:
+            return val
 
 
 assert find_unique_value([1, 2, 1, 1]) == 2, 'Test1'
