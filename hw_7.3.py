@@ -25,7 +25,7 @@ def get_error_message(condition_dict) -> str:
     return message
 
 
-def second_index(text: str, some_str: str, occurrence: int = 2) -> str | int | None:  #трошки ускладнив: шукає будь яке входження
+def second_index(text: str, some_str: str, occurrence: int = 2) -> (int, None):  #трошки ускладнив: шукає будь який індекс
     condition_dict = {"text": (text, str), "some_str": (some_str, str), "target_index": (occurrence, int)}
     error_message = get_error_message(condition_dict)
     if error_message:
