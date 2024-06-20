@@ -5,15 +5,12 @@
 """
 
 
-def fill(data: list) -> dict:
-    result_dict = {}
-    for i in data:
-        result_dict[i] = result_dict.get(i, 0) + 1
-    return result_dict
+def find_unique_value(some_list) -> int:
+    count_dict = {}
 
+    for i in some_list:
+        count_dict[i] = count_dict.get(i, 0) + 1
 
-def find_unique_value(some_list):
-    count_dict = fill(some_list)
     for i in count_dict:
         if count_dict[i] == 1:
             return i
