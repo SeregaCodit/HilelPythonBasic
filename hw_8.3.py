@@ -14,20 +14,11 @@ def fill(data: list) -> dict:
 
 
 def find_unique_value(some_list):
-    # counted_items = Counter(some_list)
-    # for key, val in counted_items.items():
-    #     if val == 1:
-    #         return key
-
-    # return [i for i in some_list if some_list.count(i) == 1][0]
-
     count_dict = fill(some_list)
     for i in count_dict:
         if count_dict[i] == 1:
             return i
 
-
-print(find_unique_value([1, 2, 1, 1]))
 
 assert find_unique_value([1, 2, 1, 1]) == 2, 'Test1'
 assert find_unique_value([2, 3, 3, 3, 5, 5]) == 2, 'Test2'
