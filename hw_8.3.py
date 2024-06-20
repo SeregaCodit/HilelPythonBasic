@@ -8,7 +8,7 @@
 def fill(data: list) -> dict:
     result_dict = {}
     for i in data:
-        result_dict[i] += 1 if i in result_dict else 1
+        result_dict[i] = result_dict.get(i, 0) + 1
     return result_dict
 
 
