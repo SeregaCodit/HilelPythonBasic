@@ -7,7 +7,7 @@ def popular_words(text: str, words: Iterable) -> Dict[str, int]:
 
     for i in splitted_text:
         if i in target_words:
-            target_words[i] = target_words[i] + 1
+            target_words[i] += 1
     return target_words
 
 
