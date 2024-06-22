@@ -34,15 +34,14 @@ if method == "1":
         user_input = eval(operation)
     result += str(user_input)
 elif method == "2":
-    while len(user_input) != 1: # не потрібно перетворювати у list
+    while len(user_input) != 1:
         value = 1
         for i in list(user_input):
             value *= int(i)
         user_input = str(value)
-    result += str(user_input) # user_input і так є рядком
+    result += str(user_input)
 else:
     #я вкурсі що цього можна було і не писати =)
     result = "Ми не знаємо як так вийшло... Аби ми тількі знали як такв вийшло... Але ми не знаємо як так вийшло... (с)"
 
 print(result)
-
