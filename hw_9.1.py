@@ -3,7 +3,7 @@ from typing import Iterable, Dict
 
 def popular_words(text: str, words: Iterable) -> Dict[str, int]:
     splitted_text = text.lower().split()
-    target_words = {key.lower(): 0 for key in words}
+    target_words = {key: 0 for key in words}
 
     for i in splitted_text:
         if i in target_words:
