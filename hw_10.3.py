@@ -1,6 +1,19 @@
+from functools import wraps
+
+
+def is_binary_even(func):
+    #попрактикуватись із декораторами
+    @wraps(func)
+    def wrapper(digit) -> bool:
+        last_bit = digit & 1
+        return not last_bit
+    return wrapper
+
+
+@is_binary_even
 def is_even(digit):
     """ Перевірка чи є парним число """
-    return digit % 2 == 0
+    return digit
 
 
 assert is_even(2) == True, 'Test1'
