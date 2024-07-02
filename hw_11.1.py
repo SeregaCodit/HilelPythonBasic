@@ -4,9 +4,6 @@ from math import sqrt
 
 def prime_generator(end):
     max_possible_prime_divisor = round(sqrt(end))
-
-def prime_generator(end):
-    max_possible_prime_divisor = round(sqrt(end))
     primes = [True] * (end + 1)
     primes[0] = primes[1] = False
 
@@ -14,7 +11,7 @@ def prime_generator(end):
         if primes[i]:
             yield i
             if i <= max_possible_prime_divisor:
-                for multiple in range(i * i, end + 1, i):
+                for multiple in range(i ** 2, end + 1, i):
                     primes[multiple] = False
 
 
