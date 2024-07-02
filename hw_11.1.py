@@ -8,7 +8,7 @@ def prime_generator(end):
 def prime_generator(end):
     max_possible_prime_divisor = round(sqrt(end))
     primes = [True] * (end + 1)
-    primes[0] = primes[1] = False  # 0 та 1 не є простими числами
+    primes[0] = primes[1] = False
 
     for i in range(2, end + 1):
         if primes[i]:
