@@ -3,7 +3,10 @@ from functools import wraps
 import inspect
 
 
-def get_named_arguments(func):
+def remove_spaces(data: str) -> str:
+    return data.replace("\n", "").replace("  ", "")
+
+def get_named_arguments(func) -> dict:
     signature = inspect.signature(func)
     return {param.name: param.default for param in signature.parameters.values() if param.default != param.empty}
 
@@ -23,7 +26,7 @@ def write_to_file(func):
 
 
 @write_to_file
-def delete_html_tags(html_file, result_file='cleaned.txt'):
+def delete_html_tags(html_file, result_file='cleaned.txt', **kwargs) -> str:
     with codecs.open(html_file, 'r', 'utf-8') as file:
         html = file.read()
     cleared = []
@@ -32,10 +35,12 @@ def delete_html_tags(html_file, result_file='cleaned.txt'):
         index = i.find(">")
         if index != -1:
             i = i[index + 1:]
+            if kwargs.get("remove_extra_spaces"):
+                i = remove_spaces(i)
             if not i.startswith("\n") and i:
                 cleared.append(i)
 
     return "\n".join(cleared)
 
 
-delete_html_tags(html_file="draft.html")
+delete_html_tags(html_file="draft.html", remove_extra_spaces=True)
