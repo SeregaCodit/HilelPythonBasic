@@ -27,9 +27,11 @@ class Purchase:
         self.products = {}
         self.user = user
         self.total = 0
+        self.new_product_added = False  # щоб зайвий раз не рахувати self.total без необхідності
 
     def add_item(self, item, cnt):
         self.products[item] = cnt
+        self.new_product_added = True
 
     @staticmethod
     def __products_to_str(data) -> str:
@@ -44,10 +46,13 @@ class Purchase:
                 f"{self.__products_to_str(self.products)}")
 
     def get_total(self):
-        total = 0
+        if not self.new_product_added:
+            return self.total
+        self.total = 0
         for item in self.products:
-            total += item.price * self.products[item]
-        return total
+            self.total += item.price * self.products[item]
+        self.new_product_added = False
+        return self.total
 
 
 lemon = Item('lemon', 5, "yellow", "small", )
