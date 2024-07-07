@@ -44,19 +44,19 @@ class Counter:
                 if instance.min_value <= value <= instance.max_value:
                     return func(instance, value, **kwargs)
                 else:
-                    raise ValueError(f"{func.__name__.split('_')[1]} value must be >= {instance.min_value} and"
+                    raise ValueError(f"current value must be >= {instance.min_value} and"
                                      f" <= {instance.max_value}")
             elif func.__name__ == "set_min":
                 if value <= instance.current and value <= instance.max_value:
                     return func(instance, value, **kwargs)
                 else:
-                    raise ValueError(f"{func.__name__.split('_')[1]} value must be <= {instance.current}")
+                    raise ValueError(f"min value must be <= {instance.current}")
 
             elif func.__name__ == "set_max":
                 if value >= instance.current and instance.max_value:
                     return func(instance, value, **kwargs)
                 else:
-                    raise ValueError(f"{func.__name__.split('_')[1]} value must be >= {instance.current}")
+                    raise ValueError(f"max value must be >= {instance.current}")
             else:
                 raise NameError(f"Дідько! Я хз що робити з функцією {func.__name__}! Шукай того хто це писав!")
 
