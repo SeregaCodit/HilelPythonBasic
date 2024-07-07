@@ -28,9 +28,8 @@ class Counter:
                 return func(_, value, **kwargs)
             try:
                 value = int(value)
-            except (ValueError, TypeError):
-                print(f"Function {func.__name__}() accepts only numbers, not a {type(value)}!")
-                return None
+            except TypeError:
+                raise TypeError(f"Function {func.__name__}() accepts only numbers, not a {type(value)}!")
 
             return func(_, value, **kwargs)
 
