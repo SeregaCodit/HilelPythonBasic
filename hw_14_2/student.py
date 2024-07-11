@@ -14,7 +14,7 @@ class Student(Human):
         return hash(self.__str__())
 
     def __eq__(self, other):
-        return True if all((self.first_name == other.first_name, self.last_name == other.last_name)) else False
+        return True if self.__dict__ == other.__dict__ else False
 
 
 
