@@ -16,15 +16,14 @@ class Rectangle:
 
     @staticmethod
     def calc_sides(rectangles: tuple, multiplier=None):
-        total_squre = 0
+        total_square = 0
         rect_proportions = 0
-        # if all((len(rectangles) == 1, multipliyer is not None)):
 
         for rect in rectangles:
             rect_proportions += (rect.width / rect.height)
-            total_squre += rect.get_square() if not multiplier else rect.get_square() * multiplier
+            total_square += rect.get_square() if not multiplier else rect.get_square() * multiplier
         mean_proportion = rect_proportions / len(rectangles)
-        side_b = sqrt(total_squre / mean_proportion)
+        side_b = sqrt(total_square / mean_proportion)
         side_a = mean_proportion * side_b
         return side_a, side_b
 
