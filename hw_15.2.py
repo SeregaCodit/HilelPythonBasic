@@ -26,10 +26,9 @@ def type_check(func):
 
 
 class Fraction:
-    def __init__(self, a, b, simplify=False):
+    def __init__(self, a, b):
         self.a = a
         self.b = b
-        self.simplify = simplify
 
     @staticmethod
     def get_denominator(self, other):
